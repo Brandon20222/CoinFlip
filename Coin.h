@@ -2,11 +2,13 @@
 #define COIN_H
 #include <string>
 #include <iostream>
+using namespace std;
+
 class Coin
 {
 private:
 	bool isHeads;
-	int const cenValue;
+	int const centValue;
 public:
 	Coin();
 	Coin(int value);
