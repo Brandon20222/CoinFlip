@@ -28,7 +28,7 @@ Game::~Game() {
 }
 
 void setCoin(Coin* moreCoin) {
-	Coin *coins = moreCoin;
+	Coin* coins = moreCoin;
 }
 
 
@@ -36,7 +36,7 @@ void Game::printFlipResults() {
 	double roundTotal = 0;
 	for (int i = 0; i < numberOfCoins; i++) {
 		cout << coins[i].getSideUp() << endl;
-		cout << " + value =" + to_string(coins[i].getCentValue()) << endl;
+		cout << " + value = " + to_string(coins[i].getCentValue()) << endl;
 		if(coins[i].isItHeads())
 			roundTotal += coins[i].getCentValue() * .01;
 	}
@@ -62,7 +62,7 @@ int Game::getScore() {
 	return totalScore;
 }
 void Game::playGame() {
-	cout << "Welcome to the COin Flipper!!!!" << endl;
+	cout << "Welcome to the Coin Flipper!!!!" << endl;
 
 	for (int i = 1; totalScore < targetBalance; i++) {
 		FlipCoins();
