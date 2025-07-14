@@ -1,11 +1,13 @@
 #include <iostream>
 #include "Coin.h"
+#include <ctime>
 using namespace std;
 
 
 void driver();
 
 int main() {
+	srand(time(0));
 	driver();
 }
 
