@@ -9,7 +9,7 @@ private:
 	Coin* coins;
 	int numberOfCoins;
 	double targetBalance;
-	int totalScore;
+	double totalScore;
 	int rounds;
 public:
 	Game();

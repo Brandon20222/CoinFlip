@@ -9,11 +9,10 @@ void driver();
 
 int main() {
 	srand(time(0));
-	driver();
+	//driver();
 
 	Game myGame;
-	myGame.printFlipResults();
-	myGame.printScore();
+	myGame.playGame();
 }
 
 void driver() {

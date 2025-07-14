@@ -5,16 +5,18 @@ using namespace std;
 
 Game::Game() {
 	
-numberOfCoins = 3;
-coins = new Coin[numberOfCoins];
+	srand(time(0));
+	numberOfCoins = 3;
+	coins = new Coin[numberOfCoins];
 
-Coin* tempCoins= new Coin[3]
-{
+	Coin* tempCoins= new Coin[3]
+	{
 	Coin(5), Coin(10),Coin(25) };
 
-double targetBalance = 1.0;
-int totalScore = 0;
-int rounds = 0;
+	coins = tempCoins;
+	targetBalance = 1.0;
+	totalScore = 0;
+	rounds = 0;
 
 }
 Game::Game(double target) : Game() {
@@ -26,15 +28,24 @@ Game::~Game() {
 }
 
 void setCoin(Coin* moreCoin) {
-	coins = moreCoin;
+	Coin *coins = moreCoin;
 }
 
 
 void Game::printFlipResults() {
+	double roundTotal = 0;
 	for (int i = 0; i < numberOfCoins; i++) {
 		cout << coins[i].getSideUp() << endl;
-		cout << " + value=" + to_string(coins[i].getCentValue()) << endl;
+		cout << " + value =" + to_string(coins[i].getCentValue()) << endl;
+		if(coins[i].isItHeads())
+			roundTotal += coins[i].getCentValue() * .01;
 	}
+	totalScore += roundTotal;
+
+	cout << "Tour total for this round is: " << roundTotal << endl;
+
+	cout << "Your total for the game so far is: " << totalScore << endl;
+
 }
 void Game::FlipCoins() {
 	for (int i = 0; i < numberOfCoins; i++) {
@@ -51,5 +62,12 @@ int Game::getScore() {
 	return totalScore;
 }
 void Game::playGame() {
+	cout << "Welcome to the COin Flipper!!!!" << endl;
 
+	for (int i = 1; totalScore < targetBalance; i++) {
+		FlipCoins();
+		printFlipResults();
+		rounds++;
+	}
+	cout << "It took you " << rounds << " To get to $" << targetBalance << endl;
 }
