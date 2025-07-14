@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 #include "Coin.h"
+using namespace std;
 
 class Game
 {
@@ -21,6 +22,7 @@ public:
 	int getRounds();
 	int getScore();
 	void playGame();
+	void setCoin(Coin* coin);
 
 
 };

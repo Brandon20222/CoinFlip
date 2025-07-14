@@ -12,6 +12,7 @@ private:
 public:
 	Coin();
 	Coin(int value);
+
 	void flip();
 	bool isItHeads()const;
 	string getSideUp()const;

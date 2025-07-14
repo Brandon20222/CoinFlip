@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Coin.h"
 #include <ctime>
+#include "Game.h"
 using namespace std;
 
 
@@ -9,6 +10,10 @@ void driver();
 int main() {
 	srand(time(0));
 	driver();
+
+	Game myGame;
+	myGame.printFlipResults();
+	myGame.printScore();
 }
 
 void driver() {
@@ -25,5 +30,7 @@ void driver() {
 	}
 	cout << "Heads: " << heads << endl;
 	cout << "Tails: " << tails << endl;
+
+	
 
 }
