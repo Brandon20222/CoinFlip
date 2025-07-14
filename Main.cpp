@@ -9,7 +9,10 @@ void driver();
 
 int main() {
 	srand(time(0));
-	//driver();
+	cout << "Exercise 1: " << endl;
+	driver();
+	cout << endl;
+	cout << "Exercise 2:" << endl;
 
 	Game myGame;
 	myGame.playGame();
