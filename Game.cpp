@@ -1,6 +1,7 @@
 #include "Game.h"
 #include <iostream>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 Game::Game() {
@@ -41,10 +42,10 @@ void Game::printFlipResults() {
 			roundTotal += coins[i].getCentValue() * .01;
 	}
 	totalScore += roundTotal;
+	cout << setprecision(2) << fixed;
+	cout << "Tour total for this round is: $" << roundTotal << endl;
 
-	cout << "Tour total for this round is: " << roundTotal << endl;
-
-	cout << "Your total for the game so far is: " << totalScore << endl;
+	cout << "Your total for the game so far is: $" << totalScore << endl;
 
 }
 void Game::FlipCoins() {
